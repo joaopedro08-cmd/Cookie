@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração de Cookies</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div>
+                <span class="eyebrow">Cookies & Experiência</span>
+                <h1 id="boasVindas">Um site mais bonito com cookies inteligentes</h1>
+                <p class="hero-copy">
+                    Salve preferências, personalize o tema e veja como os cookies podem deixar sua navegação mais rápida e confortável.
+                </p>
+            </div>
+            <div class="hero-actions">
+                <button onclick="trocarTema('claro')">Modo Claro</button>
+                <button onclick="trocarTema('escuro')">Modo Escuro</button>
+            </div>
+        </header>
+
+        <main class="card-grid">
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>1. Lembrar seu nome</h2>
+                    <span class="tag">Cookie: usuario</span>
+                </div>
+                <div class="fields">
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                    <button onclick="salvarNome()">Salvar Nome</button>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>2. Contador de visitas</h2>
+                    <span class="tag">Cookie: visitas</span>
+                </div>
+                <p id="visitas">Carregando visitas...</p>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>3. Tema e layout</h2>
+                    <span class="tag">Cookie: tema</span>
+                </div>
+                <div class="fields">
+                    <button onclick="trocarTema('claro')">Claro</button>
+                    <button onclick="trocarTema('escuro')">Escuro</button>
+                </div>
+                <div class="fields">
+                    <button onclick="alterarLayout('espacoso')" class="secondary">Layout Espaçoso</button>
+                    <button onclick="alterarLayout('compacto')" class="secondary">Layout Compacto</button>
+                </div>
+                <p id="dadosLayout" class="info-text"></p>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>4. Exemplo extra de cookie</h2>
+                    <span class="tag">Cookie: idioma</span>
+                </div>
+                <div class="fields">
+                    <select id="idioma">
+                        <option value="">Selecione um idioma</option>
+                        <option value="pt-BR">Português</option>
+                        <option value="en-US">English</option>
+                        <option value="es-ES">Español</option>
+                    </select>
+                    <button onclick="salvarIdioma()">Salvar idioma</button>
+                </div>
+                <p id="dadosIdioma" class="info-text"></p>
+            </section>
+        </main>
+
+        <footer class="footer-note">
+            <p>As preferências salvas aqui são mantidas por cookies e reaplicadas sempre que você voltar.</p>
+        </footer>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-copy">
+            <strong>Uso de cookies</strong>
+            <p>Os cookies ajudam a lembrar suas escolhas, manter seu tema e melhorar sua experiência. Aceite para continuar usando o site com mais conforto.</p>
+        </div>
+        <div class="cookie-actions">
+            <button onclick="aceitarCookies()">Aceitar cookies</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
