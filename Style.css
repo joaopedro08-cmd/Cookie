@@ -267,9 +267,36 @@ button.secondary:hover {
 }
 
 body[data-layout="compacto"] .page-shell {
-    padding: 20px;
+    padding: 16px;
 }
 
-body[data-layout="espacoso"] .page-shell {
-    padding: 44px 24px;
+body[data-layout="compacto"] .hero {
+    padding: 22px;
+}
+
+body[data-layout="compacto"] .panel {
+    padding: 18px;
+    border-radius: 20px;
+}
+
+body[data-layout="compacto"] .fields {
+    gap: 10px;
+}
+
+body[data-layout="compacto"] .hero h1 {
+    font-size: clamp(1.8rem, 2.4vw, 2.6rem);
+}
+
+body[data-layout="compacto"] .hero-copy {
+    line-height: 1.6;
+}
+
+body[data-layout="compacto"] button {
+    padding: 12px 16px;
+}
+
+body[data-layout="compacto"] input,
+body[data-layout="compacto"] select {
+    padding: 12px 14px;
+    font-size: 0.95rem;
 }
