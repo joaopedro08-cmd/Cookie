@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<!-- Documento HTML que demonstra o uso de cookies para salvar preferências de tema, nome e idioma. -->
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demonstração de Cookies</title>
+    <!-- Link para o arquivo de estilos CSS que define aparência e responsividade. -->
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
     <div class="page-shell">
+        <!-- Cabeçalho principal da página com título, descrição e botões para alternar o tema. -->
         <header class="hero">
             <div>
                 <span class="eyebrow">Cookies & Experiência</span>
@@ -17,70 +20,86 @@
                 </p>
             </div>
             <div class="hero-actions">
+                <!-- Botões que chamam a função JavaScript trocarTema para aplicar o tema claro ou escuro. -->
                 <button id="btnClaro" onclick="trocarTema('claro')">Modo Claro</button>
                 <button id="btnEscuro" onclick="trocarTema('escuro')">Modo Escuro</button>
             </div>
         </header>
 
         <main class="card-grid">
+            <!-- Seção para lembrar o nome do usuário usando cookie 'usuario'. -->
             <section class="panel">
                 <div class="panel-header">
                     <h2 id="tituloNome">1. Lembrar seu nome</h2>
                     <span class="tag">Cookie: usuario</span>
                 </div>
                 <div class="fields">
+                    <!-- Campo de texto para o usuário informar o nome. -->
                     <input type="text" id="nome" placeholder="Digite seu nome">
+                    <!-- Botão que salva o nome no cookie. -->
                     <button id="btnSalvarNome" onclick="salvarNome()">Salvar Nome</button>
                 </div>
             </section>
 
             <section class="panel">
+                <!-- Seção que mostra quantas vezes o usuário visitou o site. -->
                 <div class="panel-header">
                     <h2 id="tituloVisitas">2. Contador de visitas</h2>
                     <span class="tag">Cookie: visitas</span>
                 </div>
+                <!-- Parágrafo atualizado pela função JavaScript atualizarVisitas. -->
                 <p id="visitas">Carregando visitas...</p>
             </section>
 
             <section class="panel">
+                <!-- Seção de controle de tema e layout com cookies 'tema' e 'layout'. -->
                 <div class="panel-header">
                     <h2 id="tituloTema">3. Tema e layout</h2>
                     <span class="tag">Cookie: tema</span>
                 </div>
                 <div class="fields">
+                    <!-- Botões que alternam o tema claro/escuro. -->
                     <button id="btnClaro2" onclick="trocarTema('claro')">Claro</button>
                     <button id="btnEscuro2" onclick="trocarTema('escuro')">Escuro</button>
                 </div>
                 <div class="fields">
+                    <!-- Botões que ajustam o layout da página. -->
                     <button id="btnLayoutEspacoso" onclick="alterarLayout('espacoso')" class="secondary">Layout Espaçoso</button>
                     <button id="btnLayoutCompacto" onclick="alterarLayout('compacto')" class="secondary">Layout Compacto</button>
                 </div>
+                <!-- Texto que mostra qual layout foi salvo. -->
                 <p id="dadosLayout" class="info-text"></p>
             </section>
 
             <section class="panel">
+                <!-- Seção de seleção de idioma com cookie 'idioma'. -->
                 <div class="panel-header">
                     <h2 id="tituloIdioma">4. Exemplo extra de cookie</h2>
                     <span class="tag">Cookie: idioma</span>
                 </div>
                 <div class="fields">
+                    <!-- Menu de seleção para escolher o idioma da interface. -->
                     <select id="idioma">
                         <option value="">Selecione um idioma</option>
                         <option value="pt-BR">Português</option>
                         <option value="en-US">English</option>
                         <option value="es-ES">Español</option>
                     </select>
+                    <!-- Botão para salvar a preferência de idioma em cookie. -->
                     <button id="btnSalvarIdioma" onclick="salvarIdioma()">Salvar idioma</button>
                 </div>
+                <!-- Exibe o idioma selecionado e salvo. -->
                 <p id="dadosIdioma" class="info-text"></p>
             </section>
         </main>
 
         <footer class="footer-note">
+            <!-- Texto informativo sobre a persistência das preferências via cookies. -->
             <p id="footerText">As preferências salvas aqui são mantidas por cookies e reaplicadas sempre que você voltar.</p>
         </footer>
     </div>
 
+    <!-- Banner de consentimento de cookies exibido até o usuário aceitar. -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-copy">
             <strong id="cookieTitle">Uso de cookies</strong>

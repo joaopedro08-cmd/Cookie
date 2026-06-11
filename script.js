@@ -1,10 +1,11 @@
 // =====================
-// FUNÇÕES DE COOKIE
+// DADOS DE TRADUÇÃO E FUNÇÕES DE COOKIE
 // =====================
 
+// Objeto com textos em diferentes idiomas usados para atualizar a interface.
 const traducoes = {
     "pt-BR": {
-        welcomeDefault: "Um site mais bonito com cookies inteligentes",
+        welcomeDefault: "Bem-vindo ao site com cookies inteligentes",
         welcomeBack: "Bem-vindo de volta, {name}!",
         heroCopy: "Salve preferências, personalize o tema e veja como os cookies podem deixar sua navegação mais rápida e confortável.",
         tituloNome: "1. Lembrar seu nome",
@@ -74,14 +75,17 @@ const traducoes = {
     }
 };
 
+// Guarda o idioma atual da interface para construir textos e aplicar traduções.
 let idiomaAtual = "pt-BR";
 
+// Cria um cookie com nome, valor e tempo de validade em dias.
 function setCookie(nome, valor, dias) {
     const data = new Date();
     data.setTime(data.getTime() + dias * 24 * 60 * 60 * 1000);
     document.cookie = `${nome}=${valor};expires=${data.toUTCString()};path=/`;
 }
 
+// Recupera o valor de um cookie pelo seu nome. Retorna string vazia se não existir.
 function getCookie(nome) {
     const nomeCookie = `${nome}=`;
     const cookies = document.cookie.split(";");
@@ -95,6 +99,7 @@ function getCookie(nome) {
     return "";
 }
 
+// Aplica textos e rótulos da interface conforme o idioma selecionado.
 function aplicarIdioma(idioma) {
     const texto = traducoes[idioma] || traducoes["pt-BR"];
     idiomaAtual = idioma;
@@ -130,6 +135,7 @@ function aplicarIdioma(idioma) {
         idiomaSelecionado.value = idioma;
     }
 
+    // Recupera e exibe o layout salvo anteriormente, se existir.
     const layout = getCookie("layout");
     if (layout) {
         document.getElementById("dadosLayout").textContent = texto.layoutSaved.replace("{value}", layout);
@@ -140,9 +146,11 @@ function aplicarIdioma(idioma) {
         document.getElementById("dadosIdioma").textContent = texto.idiomaSaved.replace("{value}", idiomaSalvo);
     }
 
+    // Sempre atualiza o contador de visitas ao aplicar o idioma.
     atualizarVisitas();
 }
 
+// Salva o nome do usuário no cookie 'usuario' e atualiza o banner de boas-vindas.
 function salvarNome() {
     const nome = document.getElementById("nome").value;
     if (nome) {
@@ -152,11 +160,13 @@ function salvarNome() {
     }
 }
 
+// Alterna o tema global da página e salva a escolha no cookie 'tema'.
 function trocarTema(tema) {
     document.body.className = tema;
     setCookie("tema", tema, 30);
 }
 
+// Ajusta o layout da página (compacto ou espaçoso) e mostra o valor salvo.
 function alterarLayout(layout) {
     document.body.dataset.layout = layout;
     setCookie("layout", layout, 30);
@@ -164,6 +174,7 @@ function alterarLayout(layout) {
     document.getElementById("dadosLayout").textContent = texto.layoutSaved.replace("{value}", layout);
 }
 
+// Salva a preferência de idioma em cookie e reaplica todos os textos na interface.
 function salvarIdioma() {
     const idioma = document.getElementById("idioma").value;
     if (idioma) {
@@ -174,11 +185,13 @@ function salvarIdioma() {
     }
 }
 
+// Marca que o usuário aceitou cookies e oculta o banner de consentimento.
 function aceitarCookies() {
     setCookie("cookiesAceitos", "sim", 365);
     document.getElementById("cookieBanner").style.display = "none";
 }
 
+// Atualiza o contador de visitas a cada carregamento e salva no cookie 'visitas'.
 function atualizarVisitas() {
     let visitas = getCookie("visitas");
     if (visitas === "") {
@@ -191,6 +204,7 @@ function atualizarVisitas() {
     document.getElementById("visitas").textContent = texto.visitCount.replace("{count}", visitas);
 }
 
+// Executa ao carregar a página: aplica tema salvo, idioma, layout e exibe cookie banner se necessário.
 window.onload = function () {
     const tema = getCookie("tema");
     if (tema) {

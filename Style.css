@@ -1,3 +1,4 @@
+/* ===== Estilos base ===== */
 body {
     margin: 0;
     min-height: 100vh;
@@ -9,6 +10,7 @@ body {
     transition: background 0.35s ease, color 0.35s ease;
 }
 
+/* ===== Tema claro ===== */
 body.claro {
     color: #102341;
     background: radial-gradient(circle at top left, #b7d7ff 0%, transparent 28%),
@@ -16,6 +18,7 @@ body.claro {
         linear-gradient(180deg, #f5f8ff 0%, #eff4ff 100%);
 }
 
+/* ===== Ajustes visuais para o tema claro ===== */
 body.claro .hero,
 body.claro .panel,
 body.claro .footer-note {
@@ -48,12 +51,14 @@ body.claro button.secondary {
     border-color: rgba(17, 47, 90, 0.16);
 }
 
+/* ===== Layout da página ===== */
 .page-shell {
     max-width: 1040px;
     margin: 0 auto;
     padding: 32px 20px;
 }
 
+/* ===== Estilo do cabeçalho hero ===== */
 .hero {
     display: flex;
     align-items: flex-start;
@@ -98,11 +103,13 @@ body.claro button.secondary {
     gap: 12px;
 }
 
+/* ===== Grid de cartões para cada painel funcional ===== */
 .card-grid {
     display: grid;
     gap: 22px;
 }
 
+/* ===== Painéis de conteúdo ===== */
 .panel {
     padding: 28px;
     border-radius: 28px;
@@ -135,6 +142,7 @@ body.claro button.secondary {
     gap: 14px;
 }
 
+/* ===== Estilo de campos de formulário ===== */
 input,
 select {
     min-width: 0;
@@ -155,6 +163,7 @@ select:focus {
     transform: translateY(-1px);
 }
 
+/* ===== Botões principais ===== */
 button {
     border: none;
     border-radius: 16px;
@@ -197,6 +206,7 @@ button.secondary:hover {
     color: #b8c1ff;
 }
 
+/* ===== Banner de cookies ===== */
 .cookie-banner {
     position: fixed;
     left: 50%;
@@ -240,6 +250,7 @@ button.secondary:hover {
     justify-content: flex-end;
 }
 
+/* ===== Regras responsivas para telas menores ===== */
 @media (max-width: 720px) {
     .hero {
         flex-direction: column;
